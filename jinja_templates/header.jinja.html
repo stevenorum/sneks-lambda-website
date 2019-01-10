@@ -1,5 +1,8 @@
 {% import 'static.jinja.macro' as static with context %}
 <head>
+
+  <title>{{page_title if page_title is defined and page_title else "sneks example page!"}}</title>
+
   {% include "meta.jinja.html" %}
   {% include "icons.jinja.html" %}
   {% include "social.jinja.html" %}
