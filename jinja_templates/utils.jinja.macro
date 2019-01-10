@@ -1,1 +1,1 @@
-{% macro ordinal(n) -%}{% set m = int(str(n).lstrip("0")) %}{% set mdiv = int(str(n)[:-1]) if m > 9 else 0 %}{% set suffix = "tsnrhtdd"[(mdiv%10!=1)*(m%10<4)*m%10::4] %}{{ m }}{{ suffix }}{%- endmacro %}
+{% macro ordinal(n) -%}{% set m = n.lstrip("0") | int %}{% set mdiv = 0 if m < 10 else n[:-1] | int %}{% set suffix = "tsnrhtdd"[(mdiv%10!=1)*(m%10<4)*m%10::4] %}{{ m }}{{ suffix }}{%- endmacro %}
