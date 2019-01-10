@@ -1,0 +1,7 @@
+{% set url = url if url is defined and url else post.url %}
+{% set title = title if title is defined and title else post.title %}
+{% set text = text if text is defined and text else post.text %}
+<div class="text">
+  <h1 class="text-title"><a href='{{ url }}'>{{ title }}</a></h1>
+  <div class="text-content">{{ text }}</div>
+</div>

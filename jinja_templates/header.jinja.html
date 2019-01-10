@@ -1,0 +1,7 @@
+{% import 'static.jinja.macro' as static with context %}
+<head>
+  {% include "meta.jinja.html" %}
+  {% include "icons.jinja.html" %}
+  {% include "social.jinja.html" %}
+  {{ static.css("main.css") }}
+</head>

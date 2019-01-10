@@ -1,0 +1,9 @@
+{% if menu %}
+<footer class="footer">
+  <nav class="footer-nav">
+    {% for item in menu %}
+    <a class="footer-item" href="{{ item.url }}">{{ item.menu.html if item.menu else item.title.html}}</a>
+    {% endfor %}
+  </nav>
+</footer>
+{% endif %}

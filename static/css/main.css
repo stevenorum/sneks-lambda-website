@@ -1,0 +1,366 @@
+/* CSS purchased from http://manuelmoreale.com/; he still owns all the rights. */
+
+*,*::before,*::after{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+    background:none;
+    text-decoration:none;
+    outline:none;
+    font-family:inherit;
+    font-size:inherit;
+    line-height:inherit;
+    font-weight:400;
+    color:inherit;
+    -webkit-font-smoothing:antialiased
+}
+:root{
+    font-family:"Iowan Old Style",Palatino,Palatino Linotype,"Palatino LT STD",Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
+    font-weight:400;
+    font-size:24px
+}
+@media (min-width: 600px){
+    :root{
+        font-size:28px
+    }
+}
+@media (min-width: 1000px){
+    :root{
+        font-size:30px
+    }
+}
+@media (min-width: 1400px){
+    :root{
+        font-size:34px
+    }
+}
+body{
+    font-size:inherit;
+    line-height:inherit;
+    background:#fff;
+    color:#404040;
+    overflow:auto
+}
+main{
+    padding-right:1.5rem;
+    padding-left:1.5rem
+}
+a{
+    color:currentColor
+}
+::selection{
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    background:rgba(255,235,59,0.5)
+}
+.text-title{
+    font-size:.8666666667rem;
+    font-family:inherit;
+    line-height:1.3rem;
+    padding-bottom:.35rem;
+    padding-top:.35rem;
+    font-weight:600;
+    margin:5rem auto 2rem;
+    max-width:18rem
+}
+.text-title a{
+    font-weight:inherit
+}
+.text-content h1,.text-content h2,.text-content h3,.text-content h4,.text-content h5,.text-content h6,.text-content p,.text-content ul,.text-content ol,.text-content dl,.text-content blockquote,.text-content pre,.text-content hr{
+    margin-right:auto;
+    margin-left:auto;
+    max-width:18rem
+}
+.text-content .figure,.text-content .video{
+    margin-right:auto;
+    margin-left:auto;
+    max-width:36rem
+}
+.text-content h2,.text-content h3,.text-content h4,.text-content h5,.text-content h6{
+    font-size:.65rem;
+    font-family:inherit;
+    line-height:1rem;
+    text-align:center;
+    font-weight:600;
+    margin-top:2rem;
+    margin-bottom:1rem
+}
+.text-content p,.text-content li,.text-content pre,.text-content code{
+    font-size:.5416666667rem;
+    font-family:inherit;
+    line-height:1rem
+}
+.text-content p{
+    text-indent:1rem
+}
+.text-content h1+p{
+    text-indent:0
+}
+.text-content h2+p{
+    text-indent:0
+}
+.text-content h3+p{
+    text-indent:0
+}
+.text-content h4+p{
+    text-indent:0
+}
+.text-content h5+p{
+    text-indent:0
+}
+.text-content h6+p{
+    text-indent:0
+}
+.text-content img+p{
+    text-indent:0
+}
+.text-content figure+p{
+    text-indent:0
+}
+.text-content hr+p{
+    text-indent:0
+}
+.text-content blockquote+p{
+    text-indent:0
+}
+.text-content p:first-child{
+    text-indent:0
+}
+.text-content hr{
+    display:block;
+    border:none;
+    height:2px;
+    margin-top:2rem;
+    margin-bottom:2rem;
+    background:#f7f7f7;
+    width:9rem
+}
+.text-content a{
+    transition:color 300ms ease-out;
+    background:linear-gradient(to top, rgba(255,235,59,0.5) 0.5em, transparent 0.5em)
+}
+.text-content a:hover{
+    color:#807f7f
+}
+.text-content blockquote{
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
+    position:relative
+}
+.text-content blockquote::before{
+    content:"“";
+    position:absolute;
+    top:-1rem;
+    left:-0.75rem;
+    z-index:-1;
+    color:rgba(255,235,59,0.5);
+    font-size:3rem
+}
+.text-content blockquote p{
+    font-size:.65rem;
+    font-family:inherit;
+    line-height:1rem;
+    font-style:italic;
+    font-weight:400
+}
+.text-content strong,.text-content b{
+    font-weight:600
+}
+.text-content em,.text-content i{
+    font-style:italic
+}
+.text-content code{
+    font-family:"SF Mono" , Consolas, monaco, monospace;
+    background:#f7f7f7
+}
+.text-content pre{
+    margin-bottom:1rem
+}
+.text-content pre:not(:first-child){
+    margin-top:1rem
+}
+.text-content pre code{
+    font-size:.4815416667rem;
+    font-family:inherit;
+    line-height:.8rem;
+    padding-top:.1rem;
+    padding-bottom:.1rem;
+    font-family:"SF Mono" , Consolas, monaco, monospace;
+    padding:1rem;
+    display:block;
+    overflow-x:auto;
+    white-space:pre
+}
+.text-content p code{
+    display:inline-block;
+    text-indent:0;
+    padding:0 .25rem
+}
+.text-content figure{
+    margin-top:3rem;
+    margin-bottom:3rem
+}
+.text-content img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:2px
+}
+.text-content figcaption{
+    font-size:.4815416667rem;
+    font-family:inherit;
+    line-height:.8rem;
+    padding-top:.1rem;
+    padding-bottom:.1rem;
+    font-style:italic;
+    margin-top:1rem;
+    text-align:center
+}
+.text-content .image-wrapper{
+    position:relative;
+    background:#f7f7f7
+}
+.text-content .image-wrapper img{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0
+}
+.text-content ol,.text-content ul,.text-content dl{
+    margin-top:1rem;
+    margin-bottom:1rem
+}
+.text-content ol{
+    counter-reset:list
+}
+.text-content ol li::before{
+    display:inline-block;
+    counter-increment:list;
+    content:counter(list) ") ";
+    text-align:center;
+    white-space:pre;
+    font-weight:600
+}
+.text-content ul li::before{
+    display:inline-block;
+    counter-increment:list;
+    content:"• ";
+    text-align:center;
+    white-space:pre;
+    font-weight:600
+}
+.text-content .video{
+    position:relative;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden
+}
+.text-content .video iframe,.text-content .video object,.text-content .video embed{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%
+}
+.archive{
+    margin-right:auto;
+    margin-left:auto;
+    max-width:18rem
+}
+.archive-title{
+    font-size:.7583333334rem;
+    font-family:inherit;
+    line-height:1.3rem;
+    padding-top:.35rem;
+    padding-bottom:.35rem;
+    font-weight:600;
+    text-align:center;
+    font-weight:600;
+    margin-top:3rem
+}
+.archive-text{
+    font-size:.5416666667rem;
+    font-family:inherit;
+    line-height:1rem;
+    text-align:center;
+    font-style:italic;
+    margin-bottom:1rem
+}
+.archive-text a{
+    transition:color 300ms ease-out;
+    background:linear-gradient(to top, rgba(255,235,59,0.5) 0.5em, transparent 0.5em)
+}
+.archive-text a:hover{
+    color:#807f7f
+}
+.archive-subtitle{
+    display:flex;
+    align-items:center;
+    font-weight:600;
+    margin-top:1rem
+}
+.archive-year{
+    font-size:.65rem;
+    font-family:inherit;
+    line-height:1rem;
+    font-weight:inherit
+}
+.archive-month{
+    font-size:.65rem;
+    font-family:inherit;
+    line-height:1rem;
+    margin-left:auto;
+    font-weight:inherit
+}
+.archive-post-link{
+    font-size:.5416666667rem;
+    font-family:inherit;
+    line-height:1rem;
+    transition:color 300ms ease-out;
+    display:flex;
+    align-items:baseline;
+    position:relative
+}
+.archive-post-link:hover{
+    color:#807f7f
+}
+.archive-post-link-current{
+    font-style:italic
+}
+.archive-post-name{
+    flex:0 1 auto
+}
+.archive-post-spacer{
+    margin-top:0;
+    margin-bottom:0;
+    margin-right:.5rem;
+    margin-left:.5rem;
+    height:1px;
+    border:none;
+    border-bottom:1px dotted currentColor;
+    flex:1 0 1rem;
+    opacity:0.25
+}
+.archive-post-day{
+    flex:0 1 auto
+}
+.footer{
+    margin-top:5rem;
+    margin-bottom:1rem;
+    text-align:center
+}
+.footer a{
+    transition:color 300ms ease-out;
+    background:linear-gradient(to top, rgba(255,235,59,0.5) 0.5em, transparent 0.5em)
+}
+.footer a:hover{
+    color:#807f7f
+}
+.footer-item{
+    font-size:.4815416667rem;
+    font-family:inherit;
+    line-height:.8rem;
+    padding-top:.1rem;
+    padding-bottom:.1rem
+}

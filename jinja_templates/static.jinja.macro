@@ -1,0 +1,9 @@
+{% macro link(name) -%}
+{% set link = name if name[:4] == "http" else (static_base + "/static/" + name) %}
+<link href="{{ link }}"{% for k in kwargs %}{% if kwargs[k] %} {{k}}="{{kwargs[k]}}"{% endif %}{% endfor %}>
+{%- endmacro %}
+
+{% macro css(name) -%}
+{{ link("css/"+name, rel="stylesheet") }}
+{%- endmacro %}
+

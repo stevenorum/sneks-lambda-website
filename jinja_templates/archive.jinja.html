@@ -1,0 +1,30 @@
+{% import 'utils.jinja.macro' as utils %}
+<nav class="archive archive-posts">
+  <h2 class="archive-title">{{ archive_title if archive_title is defined else "Posts Archive" }}</h2>
+  <div class="archive-text">{{ archive_text if archive_text is defined else "All the posts published on this site" }}</div>
+
+  {# Because nothing is truly complete until it contains both ASoIaF and Simpsons references. #}
+  {% set year = "37 AC" %}
+  {% set month = "Smarch" %}
+
+  {% for p in posts %}
+  {% set post_year = p.published_date.strftime("%Y") %}
+  {% set post_month = p.published_date.strftime("%B") %}
+
+  {% if year+month != post_year+post_month %}
+  <h3 class="archive-subtitle">
+    {% if year != post_year %}<span class='archive-year'>{{ post_year }}</span>{% endif %}
+    {# Always print the month if we get here.  Even if month=post_month, getting here means it's a new year, so it's good to explicitly state the month. #}
+    <span class="archive-month">{{ post_month }}</span>
+  </h3>
+  {% endif %}
+
+  <a class="archive-post-link{{" 'archive-post-link-current'" if p.active or p == post else ""}}" href="{{ p.url }}">
+    <p class="archive-post-name">{{ p.title.html }}</p>
+    <hr class="archive-post-spacer">
+    <p class="archive-post-day">{{ utils.ordinal(p.published_date.strftime("%d")) }}</p>
+  </a>
+  {% set year = post_year %}
+  {% set month = post_month %}
+  {% endfor %}
+</nav>

@@ -1,0 +1,9 @@
+{% import 'static.jinja.macro' as static with context %}
+
+{{ static.link("favicons/apple-touch-icon.png", rel="apple-touch-icon", sizes="180x180") }}
+{{ static.link("favicons/favicon-32x32.png", rel="icon", sizes="32x32" type="image/png") }}
+{{ static.link("favicons/favicon-16x16.png", rel="icon", sizes="16x16") type="image/png"}}
+{{ static.link("favicons/safari-pinned-tab.svg", rel="mask-icon", color="#000000") }}
+{{ static.link("favicons/manifest.webmanifest", rel="manifest") }}
+
+{{ static.link("favicons/favicon.ico", rel="shortcut icon") }}
