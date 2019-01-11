@@ -10,6 +10,10 @@
   {% for p in posts %}
   {% set post_year = p.published_date.strftime("%Y") %}
   {% set post_month = p.published_date.strftime("%B") %}
+  <!-- '{{ year }}' -->
+  <!-- '{{ month }}' -->
+  <!-- '{{ post_year }}' -->
+  <!-- '{{ post_month }}' -->
 
   {% if year+month != post_year+post_month %}
   <h3 class="archive-subtitle">
