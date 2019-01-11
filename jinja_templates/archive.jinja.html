@@ -1,6 +1,6 @@
 {% import 'utils.jinja.macro' as utils %}
 <nav class="archive archive-posts">
-  <h2 class="archive-title">{{ archive_title if archive_title is defined and archive_titleelse "Posts Archive" }}</h2>
+  <h2 class="archive-title">{{ archive_title if archive_title is defined and archive_title else "Posts Archive" }}</h2>
   <div class="archive-text">{{ archive_text if archive_text is defined and archive_text else "All the posts published on this site" }}</div>
 
   {# Because nothing is truly complete until it contains both ASoIaF and Simpsons references. #}
