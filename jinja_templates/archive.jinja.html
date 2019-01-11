@@ -4,20 +4,19 @@
   <div class="archive-text">{{ archive_text if archive_text is defined and archive_text else "All the posts published on this site" }}</div>
 
   {# Because nothing is truly complete until it contains both ASoIaF and Simpsons references. #}
-  {% set year = "37 AC" %}
-  {% set month = "Smarch" %}
+  {% set dates = namespace(year="37 AC", month="Smarch") %}
 
   {% for p in posts %}
   {% set post_year = p.published_date.strftime("%Y") %}
   {% set post_month = p.published_date.strftime("%B") %}
-  <!-- '{{ year }}' -->
-  <!-- '{{ month }}' -->
+  <!-- '{{ dates.year }}' -->
+  <!-- '{{ dates.month }}' -->
   <!-- '{{ post_year }}' -->
   <!-- '{{ post_month }}' -->
 
-  {% if year+month != post_year+post_month %}
+  {% if dates.year+dates,month != post_year+post_month %}
   <h3 class="archive-subtitle">
-    {% if year != post_year %}<span class='archive-year'>{{ post_year }}</span>{% endif %}
+    {% if dates.year != post_year %}<span class='archive-year'>{{ post_year }}</span>{% endif %}
     {# Always print the month if we get here.  Even if month=post_month, getting here means it's a new year, so it's good to explicitly state the month. #}
     <span class="archive-month">{{ post_month }}</span>
   </h3>
@@ -28,7 +27,7 @@
     <hr class="archive-post-spacer">
     <p class="archive-post-day">{{ utils.ordinal(p.published_date.strftime("%d")) }}</p>
   </a>
-  {% set year = post_year %}
-  {% set month = post_month %}
+  {% set dates.year = post_year %}
+  {% set dates.month = post_month %}
   {% endfor %}
 </nav>
