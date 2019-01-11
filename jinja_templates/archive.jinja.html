@@ -14,7 +14,7 @@
   <!-- '{{ post_year }}' -->
   <!-- '{{ post_month }}' -->
 
-  {% if dates.year+dates,month != post_year+post_month %}
+  {% if dates.year+dates.month != post_year+post_month %}
   <h3 class="archive-subtitle">
     {% if dates.year != post_year %}<span class='archive-year'>{{ post_year }}</span>{% endif %}
     {# Always print the month if we get here.  Even if month=post_month, getting here means it's a new year, so it's good to explicitly state the month. #}
