@@ -1,9 +1,9 @@
-{% if menu %}
+{# See LICENSE for info about reusing this file; in its original form it came from http://manuelmoreale.com/ #}
 <footer class="footer">
   <nav class="footer-nav">
     {% for item in menu %}
     <a class="footer-item" href="{{ item.url }}">{{ item.menu.html if item.menu else item.title.html}}</a>
     {% endfor %}
+    <a class="footer-item" href="http://theme.manuelmoreale.com/one/">Template Source</a>
   </nav>
 </footer>
-{% endif %}

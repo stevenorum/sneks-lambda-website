@@ -1,1 +1,22 @@
-{% macro ordinal(n) -%}{% set m = n.lstrip("0") | int %}{% set mdiv = 0 if m < 10 else n[:-1] | int %}{% set suffix = "tsnrhtdd"[(mdiv%10!=1)*(m%10<4)*m%10::4] %}{{ m }}{{ suffix }}{%- endmacro %}
+{%- macro ordinal(n) -%}
+{#
+Even though this would be far, far easier to implement as a filter,
+I prefer to minimize the number of outside code dependencies.
+#}
+{%- set numbers = [0,1,2,3,4,5,6,7,8,9] -%}
+{%- set n = n | string -%}
+{%- set n = n.strip().lstrip("0") -%}
+{%- set m = n | int -%}
+{%- set mdiv = 0 if m < 10 else n[:-1] | int -%}
+{#
+Because of a bug in how jinja2 compiles comparisons into the underlying python that gets executed,
+the following line (although it should be identical to what I'm using) doesn't work:)
+{%- set suffix = "tsnrhtdd"[(mdiv%10!=1)*(m%10<4)*(m%10)::4] -%}
+Bug is https://github.com/pallets/jinja/issues/755
+My pull request fixing this is https://github.com/pallets/jinja/pull/938 but as of this writing is still outstanding.
+(Not terrible surprising as I'm writing this a half-hour after submitting it on a Saturday morning.)
+Because jinja2 handles conditional expressions properly, the workaround below behaves as desired.
+#}
+{%- set suffix = "tsnrhtdd"[(1 if m%10<4 else 0)*(1 if mdiv%10!=1 else 0)*(m%10)::4] -%}
+{{ m }}{{ suffix }}
+{%- endmacro -%}

@@ -15,7 +15,7 @@ class sblob(blob):
         return self.sval
 
 def get_post(text, title="The story of the forgotten post title.", url="#", active=False, published_date=None):
-    published_date = published_date if published_date else datetime(year=randint(2015,2018), month=randint(1,12), day=randint(1,28), hour=randint(0,23), minute=randint(0,60))
+    published_date = published_date if published_date else datetime(year=randint(2015,2018), month=randint(1,12), day=randint(1,28), hour=randint(0,23), minute=randint(0,59))
     return blob(
         text="<p>{}</p>".format(text),
         title=sblob(title, html=title),
